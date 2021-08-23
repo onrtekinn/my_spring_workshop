@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 @EqualsAndHashCode(of = {"id"})
 @ToString
-public class Adresses implements Serializable {
+public class Adress implements Serializable {
 
     @Id
     @SequenceGenerator(name ="seq_person_adress",allocationSize = 1)
@@ -29,10 +29,10 @@ public class Adresses implements Serializable {
     private boolean IsActive;
     @ManyToOne
     @JoinColumn(name="person_adresses_id")
-    private Employees employees;
+    private Employee employee;
 
 
-    enum AdressType{
+    public enum AdressType{
         home,
         work,
         etc

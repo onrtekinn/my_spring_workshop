@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 @EqualsAndHashCode(of = {"id"})
 @ToString
-public class Employees implements Serializable {
+public class Employee implements Serializable {
     @Id
     @SequenceGenerator(name ="seq_person",allocationSize = 1)
     @GeneratedValue(generator = "seq_person",strategy = GenerationType.SEQUENCE)
@@ -26,5 +26,5 @@ public class Employees implements Serializable {
     private String lastname;
     @OneToMany
     @JoinColumn(name = "person_adresses_id")
-    private List<Adresses> adressesList;
+    private List<Adress> adressesList;
 }
